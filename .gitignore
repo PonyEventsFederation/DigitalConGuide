@@ -4,18 +4,9 @@
 
 npm-debug.log
 node_modules
-config/**/*.local.json
-logs/*
-data/*
-APPINFO.json
-cli.js
-versionTimestamp
-package-lock.json
-modules/esfrontend/public/worker.js
-modules/esfrontend/public/css/*
-modules/esfrontend/public/img/*
-modules/esfrontend/public/js/**/*
-modules/esfrontend/public/fonts/*
+dist/worker.js
+dist/css/*
+dist/js/**/*
 
 ####################
 ### IDE ############
