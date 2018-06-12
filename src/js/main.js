@@ -1,4 +1,4 @@
 import Module from "lib/Module"
-import App from "app/App";
+import MyApp from "app/MyApp";
 
-Module.run(App, "react-root");
+Module.run(MyApp, "react-root");

@@ -1,0 +1,18 @@
+{
+  "dir": "ltr",
+  "lang": "en",
+  "name": "GalaCon 2018 Digital Con Guide",
+  "scope": "/",
+  "theme_color": "#e64946",
+  "background_color": "#e64946",
+  "display": "fullscreen",
+    "start_url": "http://localhost:8888",
+  "short_name": "GalaCon 2018",
+  "description": "GalaCon 2018 Digital Con Guide",
+  "orientation": "any",
+  "related_applications": [],
+  "prefer_related_applications": false,
+  "icons": [
+
+  ]
+}

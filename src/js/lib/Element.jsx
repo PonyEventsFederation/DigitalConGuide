@@ -32,10 +32,6 @@ class Element extends Component {
         return getValueOfObjectByPath("namespaceData." + path, this.context || {});
     }
 
-    translate() {
-        return this.context.translate.apply(this.context.translate, arguments);
-    }
-
     configure() {
 
     }

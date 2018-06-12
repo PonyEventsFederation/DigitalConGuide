@@ -1,0 +1,330 @@
+// Table of Content
+// ----------------------------------
+// 1. Gradients
+// ----------------------------------
+// 2. Border Radius
+// ----------------------------------
+// 3. Box Shadow
+// ----------------------------------
+// 4. Transitions
+// ----------------------------------
+// 5. Animations
+// ----------------------------------
+// 6. Transform
+// ----------------------------------
+// 7. Animations
+// ----------------------------------
+// 7. Boxmodel Fix
+// ----------------------------------
+// 8. Text Spalten
+// ----------------------------------
+// 9. Flexbox
+// ----------------------------------
+// 10. Sonstiges
+// ----------------------------------
+
+// --- 1. Gradients ---
+
+// Gradient Top > Bottom
+=func_gradient_tb($top_color, $bottom_alpha, $bottom_color, $top_alpha)
+    $faded_color_top: transparentize($top_color, $top_alpha)
+    $faded_color_bottom: transparentize($bottom_color, $bottom_alpha)
+
+    // background: $top_color // Old browsers
+    background: -moz-linear-gradient(top,  $faded_color_top, $faded_color_bottom) // FF3.6+
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,$faded_color_top), color-stop(100%,$faded_color_bottom)) // Chrome,Safari4+
+    background: -webkit-linear-gradient(top,  $faded_color_top,$faded_color_bottom) // Chrome10+,Safari5.1+
+    background: -o-linear-gradient(top,  $faded_color_top,$faded_color_bottom ) // Opera 11.10+
+    background: -ms-linear-gradient(top,  $faded_color_top,$faded_color_bottom) // IE10+
+    background: linear-gradient(to bottom,  $faded_color_top,$faded_color_bottom) // W3C
+
+
+// Gradient Left > Right
+=func_gradient_lr($left_color, $left_alpha, $right_color, $right_alpha)
+    $faded_color_left: transparentize($left_color, $left_alpha)
+    $faded_color_right: transparentize($right_color, $right_alpha)
+
+    background: $left_color // Old browsers
+    background: -moz-linear-gradient(left,  $faded_color_left ,$faded_color_right) // FF3.6+
+    background: -webkit-gradient(linear, left top, right top, color-stop(0%,$faded_color_left), color-stop(100%,$faded_color_right)) // Chrome,Safari4+
+    background: -webkit-linear-gradient(left,  $faded_color_left ,$faded_color_right) // Chrome10+,Safari5.1+
+    background: -o-linear-gradient(left,  $faded_color_left ,$faded_color_right) // Opera 11.10+
+    background: -ms-linear-gradient(left,  $faded_color_left ,$faded_color_right) // IE10+
+    background: linear-gradient(to right,  $faded_color_left ,$faded_color_right) // W3C
+
+// Gradient Radial
+=func_gradient_radial ($position: 50% 100%, $shape: ellipse, $extend-keyword: farthest-side, $color-stop1: rgba(255, 255, 255, .1) 0%, $color-stop2: rgba(0, 0, 0, 0) 100%)
+    background-image: -webkit-radial-gradient($position, $shape, $extend-keyword, $color-stop1, $color-stop2)
+    background-image: -moz-radial-gradient($position, $shape, $extend-keyword, $color-stop1, $color-stop2)
+    background-image: -o-radial-gradient($position, $shape, $extend-keyword, $color-stop1, $color-stop2)
+    background-image: radial-gradient($position, $shape, $extend-keyword, $color-stop1, $color-stop2)
+
+// Background-Image + Gradient
+=func_gradient_and_image($top_color, $bottom_alpha, $bottom_color, $top_alpha, $bg_image: '/my/path/to/image.png', $bg_position: center center,$bg_repeat: no-repeat)
+    $faded_color_top: transparentize($top_color, $top_alpha)
+    $faded_color_bottom: transparentize($bottom_color, $bottom_alpha)
+
+    background-image: url($bg_image), $top_color
+    background-image: url($bg_image), -moz-linear-gradient(top,  $faded_color_top, $faded_color_bottom) // FF3.6+
+    background-image: url($bg_image), -webkit-gradient(linear, left top, left bottom, color-stop(0%,$faded_color_top), color-stop(100%,$faded_color_bottom)) // Chrome,Safari4+
+    background-image: url($bg_image), -webkit-linear-gradient(top,  $faded_color_top,$faded_color_bottom) // Chrome10+,Safari5.1+
+    background-image: url($bg_image), -o-linear-gradient(top,  $faded_color_top,$faded_color_bottom ) // Opera 11.10+
+    background-image: url($bg_image), -ms-linear-gradient(top,  $faded_color_top,$faded_color_bottom) // IE10+
+    background-image: url($bg_image), linear-gradient(to bottom,  $faded_color_top,$faded_color_bottom) // W3C
+    background-position: $bg_position
+    background-repeat: $bg_repeat
+
+
+
+// --- 2. Border Radius ---
+=func_radius($radius: 5px)
+    -webkit-border-radius: $radius
+    -moz-border-radius: $radius
+    border-radius: $radius
+
+
+
+// --- 3. Box Shadow ---
+=func_boxshadow($param: 0px 2px 4px #ccc)
+    -webkit-box-shadow: $param
+    -moz-box-shadow: $param
+    box-shadow: $param
+
+
+
+// --- 4. Transitions ---
+=func_transition($transition_all: all 250ms ease)
+    -webkit-transition: $transition_all
+    -moz-transition: $transition_all
+    transition: $transition_all
+
+=func_transition_delay($delay: 250ms)
+    -webkit-transition-delay: $delay
+    -moz-transition-delay: $delay
+    transition-delay: $delay
+
+
+
+// --- 5. Animations ---
+=func_animation($animation)
+    -webkit-animation: $animation
+    -moz-animation: $animation
+    animation: $animation
+
+
+
+// --- 6. Transform ---
+=func_transform($transforms: scale(1.05) rotate(3deg))
+    -webkit-transform: $transforms
+    -moz-transform: $transforms
+    -ms-transform: $transforms
+    transform: $transforms
+
+=func_transform_style($transform-style: preserve-3d)
+    -webkit-transform-style: $transform-style
+    -moz-transform-style: $transform-style
+    -ms-transform-style: $transform-style
+    transform-style: $transform-style
+
+=func_transform_origin($origin-x: 50%, $origin-y: 50%)
+    -webkit-transform-origin: $origin-x $origin-y
+    -moz-transform-origin: $origin-x $origin-y
+    transform-origin: $origin-x $origin-y
+
+=func_backface_visibility($visibility: hidden)
+    backface-visibility: $visibility
+    -webkit-backface-visibility: $visibility
+    -moz-backface-visibility: $visibility
+    -ms-backface-visibility: $visibility
+
+
+
+// --- 3D Functions ---
+=func_3d_perspective($perspective: 400px)
+    -webkit-perspective: $perspective
+    -moz-perspective: $perspective
+    -ms-perspective: $perspective
+    perspective: $perspective
+
+=func_3d_perspective_origin($posx: 50%, $posy: 50%)
+    -webkit-perspective-origin: $posx $posy
+    -moz-perspective-origin: $posx $posy
+    -ms-perspective-origin: $posx $posy
+    perspective-origin: $posx $posy
+
+
+
+// --- 7. Boxmodel Fix ---
+=func_boxsizing($box: border-box)
+    -webkit-box-sizing: $box
+    -moz-box-sizing: $box
+    box-sizing: $box
+
+
+
+// --- 8. Text Spalten ---
+=func_columns($colwidth: 250px, $colcount: 0, $colgap: 50px, $columnRuleColor: #EEE, $columnRuleStyle: solid, $columnRuleWidth: 1px)
+    -webkit-column-width: $colwidth
+    -webkit-column-count: $colcount
+    -webkit-column-gap: $colgap
+    -webkit-column-rule-color: $columnRuleColor
+    -webkit-column-rule-style: $columnRuleStyle
+    -webkit-column-rule-width: $columnRuleWidth
+    -moz-column-width: $colwidth
+    -moz-column-count: $colcount
+    -moz-column-gap: $colgap
+    -moz-column-rule-color: $columnRuleColor
+    -moz-column-rule-style: $columnRuleStyle
+    -moz-column-rule-width: $columnRuleWidth
+    column:
+        width: $colwidth
+        count: $colcount
+        gap: $colgap
+        rule-color: $columnRuleColor
+        rule-style: $columnRuleStyle
+        rule-width: $columnRuleWidth
+
+=func_columns_count($colcount:0)
+    -webkit-column-count: $colcount
+    -moz-column-count: $colcount
+    column-count: $colcount
+
+=func_column_span($colspan: all)
+    -moz-column-span: $colspan
+    -webkit-column-span: $colspan
+    column-span: $colspan
+
+
+
+// --- 9. Flexbox ---
+
+=func_flex()
+    display: -ms-flexbox
+    display: -webkit-flex
+    display: flex
+
+// flex-start, flex-end, center, baseline, stretch
+=func_flex_align_items($align: flex-start)
+    -webkit-align-items: $align
+    -ms-align-items: $align
+    align-items: $align
+
+// flex-start, flex-end, space-between, space-around, baseline, stretch
+=func_flex_align_content($align: flex-start)
+    -webkit-align-content: $align
+    -ms-align-content: $align
+    align-content: $align
+
+// row, row-reverse, column, column-reverse
+=func_flex_direction($direction: column)
+    -webkit-flex-direction: $direction
+    -ms-flex-direction: $direction
+    flex-direction: $direction
+
+// flex-start, flex-end, center, space-between, space-around
+=func_flex_justify($justify: space-between)
+    -webkit-justify-content: $justify
+    -moz-justify-content: $justify
+    -ms-justify-content: $justify
+    justify-content: $justify
+
+// nowrap, wrap, wrap-reverse
+=func_flex_wrap($wrap: wrap)
+    -webkit-flex-wrap: $wrap
+    -ms-flex-wrap: $wrap
+    flex-wrap: $wrap
+
+=func_flex_order($order: 1)
+    -webkit-order: $order
+    -ms-flex-order: $order
+    order: $order
+
+
+
+//--- 10. Sonstiges ---
+
+// Font Smoothing
+=func_fontrendering($smoothing: antialiased, $rendering: optimizeLegibility)
+    font-smoothing: $smoothing
+    -moz-font-smoothing: $smoothing
+    -ms-font-smoothing: $smoothing
+    -o-font-smoothing: $smoothing
+    -webkit-font-smoothing: $smoothing
+    -moz-osx-font-smoothing: $smoothing
+    text-rendering: $rendering
+    -moz-text-rendering: $rendering
+    -ms-text-rendering: $rendering
+    -o-text-rendering: $rendering
+    -webkit-text-rendering: $rendering
+    -moz-osx-font-rendering: $rendering
+
+// Clearfix (im Zweifel lieber die .clearfix Klasse verwenden)
+=func_clearfix()
+    &:before,
+    &:after
+        content: ""
+        display: table
+    &:after
+        clear: both
+    zoom: 1
+
+// Push rendering to graphics card
+=func_gpu()
+    transform: translateZ(0)
+    -moz-transform: translateZ(0)
+    -ms-transform: translateZ(0)
+    -o-transform: translateZ(0)
+    -webkit-transform: translateZ(0)
+
+// Hyphenation
+=func_hyphen()
+    -moz-hyphens: auto
+    -o-hyphens: auto
+    -webkit-hyphens: auto
+    -ms-hyphens: auto
+    hyphens: auto
+
+// Opacity
+=func_opacity($opacity: 0.5 )
+    // -ms-filter: ~"Alpha(opacity="($opacity*100)~")";
+    // filter: ~"Alpha(opacity="($opacity*100)~")";
+    -webkit-opacity: $opacity
+    -moz-opacity: $opacity
+    opacity: $opacity
+
+
+
+// --- Pixels to EM
+$browser-context: 16px
+
+@function em($pixels, $context: $browser-context)
+
+    @if (unitless($pixels))
+        $pixels: $pixels * 1px
+
+    @if (unitless($context))
+        $context: $context * 1px
+
+    @return $pixels / $context * 1em
+
+
+
+// --- Pixels to REM
+@function rem($pixels, $context: $browser-context)
+
+    @if (unitless($pixels))
+        $pixels: $pixels * 1px
+
+    @if (unitless($context))
+        $context: $context * 1px
+
+    @return $pixels / $context * 1rem
+
+
+
+// --- Sprite Mixin
+=func_sprite($xpos: 0, $ypos: 0, $sprite_size-x: rem(500), $sprite_size-y: rem(500))
+    background-image: $sprite
+    background-position: $xpos $ypos
+    background-repeat: no-repeat
+    background-size: $sprite_size-x $sprite_size-y

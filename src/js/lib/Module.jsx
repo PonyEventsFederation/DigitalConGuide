@@ -17,13 +17,11 @@ export default class Module {
             <Provider store={AppInstance.store}>
                 <CookiesProvider>
                     <AppProvider app={AppInstance}>
-                        <TranslateProvider>
-                            <ConnectedRouter history={AppInstance.history}>
-                                <AppRouter>
+                        <ConnectedRouter history={AppInstance.history}>
+                            <AppRouter>
 
-                                </AppRouter>
-                            </ConnectedRouter>
-                        </TranslateProvider>
+                            </AppRouter>
+                        </ConnectedRouter>
                     </AppProvider>
                 </CookiesProvider>
             </Provider>

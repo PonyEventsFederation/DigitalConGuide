@@ -49,21 +49,21 @@ module.exports = function (grunt) {
                 options: {
                     lineNumbers: true,
                     includePaths: [
-                        './src/scss/'
+                        './src/sass/'
                     ],
                     outputStyle: 'compact',
                     sourceMap: true,
                     'default-encoding': 'utf-8'
                 },
                 files: {
-                    './dist/css/styles.css': './src/scss/styles.scss'
+                    './dist/css/styles.css': './src/sass/styles.sass'
                 }
             }
         },
 
         watch: {
             sass: {
-                files: ['./src/**/*.scss'],
+                files: ['./src/**/*.sass'],
                 tasks: ['sass']
             },
             serviceWorker: {

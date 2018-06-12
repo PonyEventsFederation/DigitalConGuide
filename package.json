@@ -9,7 +9,7 @@
   "license": "MIT",
   "devDependencies": {
     "@redux-offline/redux-offline": "2.3.3",
-    "axios": "0.18.0",
+    "axios": "^0.18.0",
     "babel-core": "^6.26.0",
     "babel-loader": "^7.1.3",
     "babel-plugin-transform-decorators-legacy": "1.3.4",
@@ -46,6 +46,7 @@
     "redux-devtools": "^3.4.1",
     "redux-oauth": "2.0.8",
     "redux-promise": "^0.5.3",
+    "redux-saga": "^0.16.0",
     "redux-subscribe": "^1.0.2",
     "redux-thunk": "^2.2.0",
     "webpack": "^4.0.0",

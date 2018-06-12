@@ -19,8 +19,7 @@ const historyMiddleware = routerMiddleware(history);
 export default class App {
     constructor(config) {
         let reducers = {
-            routing: routerReducer,
-            locale: localeReducer
+            routing: routerReducer
         };
 
         if (!config.reducers) {

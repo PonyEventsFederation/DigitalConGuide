@@ -1,0 +1,101 @@
+// --- General Colors
+$white: #ffffff
+$black: #000000
+$red: #DB5757
+$grey: #5F5E5E
+$grey-medium: #A09F9F
+$grey-lite: #D2D2D2
+$grey-ultralite: #DDDDDD
+
+$base-color: $black
+$text-color: $grey
+$link-color: $red
+$placeholder: #bababa
+
+// Background Colors
+$bg: #eeeeee
+$bg-header: $white 
+$bg-footer: $white 
+$bg-menu: $grey-ultralite
+$bg-quote: $bg
+$bg-table-row: $bg
+$bg-slider: $bg
+$bg-grid: $bg
+$bg-overlay: $white
+
+// Border Colors
+$border-input: $grey-lite
+$border-header: $grey-lite
+$border-grid-img: $grey-lite
+$border-list-item: $grey-lite
+$border-table: #e5e5e5
+$hr: $grey-medium
+
+// Buttons
+$btn-primary: $red
+$btn-secondary: $grey-ultralite
+$btn-green: $black
+$btn-grey-lite: $grey-ultralite
+$btn-grey: $grey-ultralite
+
+// Errors
+$form-error: $red
+$placeholder-error: rgba($form-error, 0.5)
+
+//- Layout
+$site-width: 100%
+
+// --- Radius
+$radius1: 3px
+$radius2: 4px
+
+// --- Local Font
+$font: '../fonts/local/'
+@font-face
+    font-family: 'FrutigerLTW01-45Light'
+    src: url('#{$font}FrutigerLTW01-45Light.eot')
+    src: url('#{$font}FrutigerLTW01-45Light.eot') format('eot'), url('#{$font}FrutigerLTW01-45Light.woff') format('woff'), url('#{$font}FrutigerLTW01-45Light.ttf') format('truetype'), url('#{$font}FrutigerLTW01-45Light.svg') format('svg')
+
+@font-face
+    font-family: 'FrutigerLTW01-55Roman'
+    src: url('#{$font}FrutigerLTW01-55Roman.eot')
+    src: url('#{$font}FrutigerLTW01-55Roman.eot') format('eot'), url('#{$font}FrutigerLTW01-55Roman.woff') format('woff'), url('#{$font}FrutigerLTW01-55Roman.ttf') format('truetype'), url('#{$font}FrutigerLTW01-55Roman.svg') format('svg')
+
+@font-face
+    font-family: 'Frutiger LT W01_65 Bold'
+    src: url('#{$font}FrutigerLTW01-65Bold.eot')
+    src: url('#{$font}FrutigerLTW01-65Bold.eot') format('eot'), url('#{$font}FrutigerLTW01-65Bold.woff') format('woff'), url('#{$font}FrutigerLTW01-65Bold.ttf') format('truetype'), url('#{$font}FrutigerLTW01-65Bold.svg') format('svg')
+
+@font-face
+    font-family: "Frutiger LT W01_56 Italic"
+    src: url("#{$font}FrutigerLTW01-56Italic.eot")
+    src: url("#{$font}FrutigerLTW01-56Italic.eot") format("eot"), url("#{$font}FrutigerLTW01-56Italic.woff") format("woff"), url("#{$font}FrutigerLTW01-56Italic.ttf") format("truetype"), url("#{$font}FrutigerLTW01-56Italic.svg") format("svg")
+
+$typo_light: 'FrutigerLTW01-45Light', helvetica, arial, sans-serif
+$typo_regular: 'FrutigerLTW01-55Roman', helvetica, arial, sans-serif
+$typo_bold: 'Frutiger LT W01_65 Bold', helvetica, arial, sans-serif
+$typo_italic: 'Frutiger LT W01_56 Italic', helvetica, arial, sans-serif
+
+// --- Font Sizes
+$size1: rem(10)
+$size2: rem(12)
+$size3: rem(14)
+$size4: rem(16)
+$size5: rem(18)
+$size6: rem(24)
+
+// --- Images
+$img: '../img/'
+
+// --- Box-Shadow Helper
+=func_boxshadow_helper($level: 1)
+    @if ($level == 1)
+        box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24)
+    @if ($level == 2)
+        box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23)
+    @if ($level == 3)
+        box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23)
+    @if ($level == 4)
+        box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22)
+    @if ($level == 5)
+        box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22)
