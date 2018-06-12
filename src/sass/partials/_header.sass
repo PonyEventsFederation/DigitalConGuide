@@ -1,0 +1,62 @@
+.header
+  background-color: $bg-header
+  border-bottom: 1px solid $border-header
+  height: rem(44)
+  width: 100%
+  position: fixed
+  top: 0
+  right: 0
+  left: 0
+  z-index: 10
+
+.header__inner
+  text-align: center
+  margin: 0 auto
+  max-width: $site-width
+  position: relative
+
+.header__logo
+  display: block
+  position: absolute
+  top: rem(11)
+  left: rem(15)
+
+  img
+    display: block
+    height: rem(30)
+    width: rem(60)
+    margin-top: rem(-5)
+
+.header__title
+  color: $text-color
+  font-size: rem(18)
+  line-height: 1.2em
+  text-overflow: ellipsis
+  overflow: hidden
+  padding: rem(11) rem(60) 0 rem(60)
+  width: 100%
+  white-space: nowrap
+
+.header__btn
+  display: block
+  height: rem(44)
+  width: rem(44)
+  position: absolute
+  top: 0
+  text-indent: -999999px
+  cursor: pointer
+
+.header__btn--menu
+  background-image: url(#{$img}btn-menu.svg)
+  background-position: 50% 50%
+  background-repeat: no-repeat
+  background-size: rem(28) rem(22)
+  right: rem(15)
+
+.header__btn--back
+  background-image: url(#{$img}chevron-left-small.svg)
+  background-position: 0 50%
+  background-repeat: no-repeat
+  background-size: rem(13) rem(21)
+  left: rem(15)
+

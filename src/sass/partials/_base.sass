@@ -1,0 +1,160 @@
+\:root
+  font-family: $typo_regular
+  font-size: rem(16)
+
+html
+  box-sizing: border-box
+
+*, *:before, *:after
+  box-sizing: inherit
+
+html,
+body
+  height: 100%
+  width: 100%
+  position: fixed
+  overflow: hidden
+
+a
+  text-decoration: none
+
+  &:focus
+    outline: 0
+
+a[href^=tel]
+  text-decoration: inherit
+  color: inherit
+
+.content
+  background: $white
+  overflow: hidden
+  margin: 0 auto
+  height: 100%
+  max-width: $site-width
+  position: relative
+
+.content__inner
+  overflow: hidden
+  padding: rem(44) 0
+  height: 100%
+  width: 100%
+  background-image: url(#{$img}bg-light.png)
+  background-repeat: no-repeat
+  background-size: cover
+  background-position: center
+
+.content__inner--primary
+  background-color: $white
+
+.content__inner--secondary
+  background-color: $bg
+
+.content__inner--login
+  padding: 0
+
+.page-wrapper
+  font-size: 0
+  height: 100%
+  white-space: nowrap
+  transition: all 250ms ease
+
+.page
+  font-size: rem(16)
+  display: inline-block
+  height: 100%
+  width: 100%
+  vertical-align: top
+  white-space: normal
+
+.page__inner
+  overflow: hidden
+  overflow-y: auto
+  height: 100%
+  transition: all 250ms ease
+  -webkit-overflow-scrolling: touch
+
+  &.spacer--search
+    margin-top: rem(126)
+    height: calc(100% - 126px)
+
+  &.spacer--events
+    margin-top: rem(288)
+    height: calc(100% - 288px)
+
+.page__content
+  padding: rem(30) rem(30) 0 rem(30)
+
+.main
+  padding: rem(15) rem(15) 0 rem(15)
+
+.darkener
+  background: rgba($black, 0.6)
+  position: fixed
+  top: 0
+  right: 0
+  bottom: 0
+  height: 100%
+  width: 100%
+  opacity: 0
+  visibility: hidden
+  transition: all 250ms ease
+  z-index: 50
+
+.darkener--active
+  opacity: 1
+  visibility: visible
+
+.headline
+  color: $text-color
+  font-weight: normal
+  line-height: 1.4
+  display: block
+  margin-bottom: 0.4em
+
+.headline--big
+  font-size: rem(32)
+
+.headline--md
+  font-size: rem(24)
+
+.headline--sm
+  font-size: rem(18)
+
+.subline
+  color: $text-color
+  font-weight: normal
+  line-height: 1.4
+  display: block
+  margin-bottom: 1em
+
+.subline--big
+  font-size: rem(18)
+
+.subline--md
+  font-size: rem(16)
+
+.subline--sm
+  font-size: rem(14)
+
+.text--light
+  font-family: $typo_light
+
+.text--md
+  font-family: $typo_regular
+
+.text--bold
+  font-family: $typo_bold
+
+.btn-close
+  background-image: url(#{$img}btn-close.svg)
+  background-position: 50% 50%
+  background-repeat: no-repeat
+  background-size: rem(20) rem(20)
+  text-indent: -999999px
+  display: block
+  height: rem(44)
+  width: rem(44)
+  position: absolute
+  top: 0
+  left: 0
+  cursor: pointer

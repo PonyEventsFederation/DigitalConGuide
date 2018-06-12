@@ -1,4 +1,7 @@
+import * as navSagas from './navigation.saga';
+
 const sagas = [
+    navSagas
 ];
 
 export default (middleware) => {

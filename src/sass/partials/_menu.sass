@@ -1,0 +1,36 @@
+.menu
+  background: $bg-menu
+  overflow: hidden
+  overflow-y: auto
+  padding: rem(20) rem(20) 0 rem(20)
+  height: 100%
+  width: rem(200)
+  position: absolute
+  top: 0
+  right: 0
+  bottom: 0
+  transform: translate3d(100%,0,0)
+  transition: all 250ms ease
+  z-index: 100
+
+.menu--active
+  transform: translate3d(0,0,0)
+
+.menu__list
+  display: flex
+  flex-direction: column
+  justify-content: flex-start
+  min-height: calc(100% - 45px)
+
+  li
+    border-bottom: 1px solid $white
+
+.menu__list-item
+  color: $text-color
+  display: block
+  padding: rem(15) 0
+  margin-bottom: auto
+
+.menu__list-item--active
+  color: $gc-red
+

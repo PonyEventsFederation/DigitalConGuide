@@ -1,6 +1,7 @@
 import App from '../lib/App'
 import Router from './Router'
 import registerSagasWithMiddleware from './sagas';
+import ReducerNavigation from './reducer/Navigation'
 
 import axios from 'axios';
 import createSagaMiddleware from 'redux-saga'
@@ -45,5 +46,6 @@ class MyApp extends App {
 
 export default new MyApp({
     reducers: {
+        navigation: ReducerNavigation,
     }
 });
