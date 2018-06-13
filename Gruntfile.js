@@ -1,5 +1,3 @@
-var path = require("path");
-
 module.exports = function (grunt) {
 
     grunt.initConfig({
@@ -11,48 +9,32 @@ module.exports = function (grunt) {
                 options: {
                     mangle: false,
                     compress: false,
-                    beautify: true,
+                    beautify: false,
                     sourceMap: false,
                     preserveComments: false,
                     report: "min",
                     except: []
                 },
                 files: {
-                    'dist/js/bundle.js': ['dist/js/bundle.min.js'],
+                    'dist/js/bundle.js': ['dist/js/bundle.js'],
                 }
             }
         },
 
         webpack: {
-            bundle: require("./webpack.build.config.js"),
-            worker: require("./webpack.worker.build.config.js"),
-            workerDev: require("./webpack.worker.config.js")
-        },
-
-        "webpack-dev-server": {
-            default: {
-                publicPath: '/js/',
-                // keepalive: false,
-                webpack: require("./webpack.config.js"),
-                contentBase: [
-                    path.resolve('dist')
-                ],
-                port: 8888,
-                historyApiFallback: {
-                    index: 'index.html'
-                }
-            }
+            prod: require("./webpack.prod.config.js"),
+            dev: require("./webpack.dev.config.js")
         },
 
         sass: {
             dist: {
                 options: {
-                    lineNumbers: true,
+                    lineNumbers: false,
                     includePaths: [
                         './src/sass/'
                     ],
-                    outputStyle: 'compact',
-                    sourceMap: true,
+                    outputStyle: 'compressed',
+                    sourceMap: false,
                     'default-encoding': 'utf-8'
                 },
                 files: {
@@ -66,9 +48,9 @@ module.exports = function (grunt) {
                 files: ['./src/**/*.sass'],
                 tasks: ['sass']
             },
-            serviceWorker: {
-                files: ['./src/js/service-worker/*.js'],
-                tasks: ['webpack:workerDev']
+            js: {
+                files: ['./src/**/*.js', './src/**/*.jsx'],
+                tasks: ['webpack:dev']
             }
         }
     });
@@ -80,15 +62,15 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks('grunt-shell');
     grunt.loadNpmTasks('grunt-sass');
 
+    grunt.registerTask('dist', [
+        'sass',
+        'webpack:prod',
+        'uglify'
+    ]);
 
     grunt.registerTask('dev', [
         "sass",
-        "webpack-dev-server",
-        "watch"
-    ]);
-
-    grunt.registerTask('devCss', [
-        "sass",
+        "webpack:dev",
         "watch"
     ]);
 };

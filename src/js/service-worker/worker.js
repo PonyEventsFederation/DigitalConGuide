@@ -1,10 +1,3 @@
-// Set this to true for production
-const doCache = true;
-// Name our cache
-const CACHE_NAME = 'gdcg-pwa-cache';
-
-importScripts('https://storage.googleapis.com/workbox-cdn/releases/3.2.0/workbox-sw.js');
-
 if (workbox) {
     console.log(`Yay! Workbox is loaded 🎉`);
 
@@ -45,14 +38,3 @@ if (workbox) {
 } else {
     console.log(`Boo! Workbox didn't load 😬`);
 }
-
-const assets = [
-    "/",
-    "/index.html",
-    "/manifest.json",
-    "/css/styles.css",
-    "/fonts/local/FrutigerLTW01-55Roman.woff",
-    "/img/bg-cover.png",
-    "/img/bg-light.png",
-    "/fonts/local/FrutigerLTW01-45Light.woff",
-];

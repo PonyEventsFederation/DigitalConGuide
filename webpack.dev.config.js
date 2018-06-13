@@ -1,18 +1,21 @@
 const path = require("path");
-const webpack = require("webpack")
+const WorkboxPlugin = require('workbox-webpack-plugin');
+const BrowserSyncPlugin = require('browser-sync-webpack-plugin');
+
+const WORKER_FILE = path.resolve('src/js/service-worker/worker.js');
 
 module.exports = {
-    mode: "production",
+    mode: "development",
     entry: [
         "babel-polyfill",
         path.resolve('src/js/main')
     ],
-    watch: false,
+    watch: true,
     module: {
         rules: [
             {
                 test: /\.(js|jsx)$/,
-                exclude: /node_modules/,
+                exclude: /node_modules|worker\.js|service-worker/,
                 use: {
                     loader: 'babel-loader',
                     options: {
@@ -33,11 +36,30 @@ module.exports = {
         ]
     },
     plugins: [
-        new webpack.DefinePlugin(
-            {
-                'global': {}
+        new WorkboxPlugin.InjectManifest({
+            swSrc: WORKER_FILE,
+            swDest: './../worker.js',
+            importWorkboxFrom: 'local',
+            globDirectory: './dist/',
+            globPatterns: [
+                'index.html',
+                'manifest.json',
+                'robots.txt',
+                'img/*.svg',
+                'css/*.css',
+                'fonts/local/*.{woff,woff2}',
+            ],
+            modifyUrlPrefix: {
+                '': '/'
             }
-        ),
+        }),
+        new BrowserSyncPlugin({
+            host: process.env.IP || 'localhost',
+            port: process.env.PORT || 8888,
+            server: {
+                baseDir: ['./dist']
+            }
+        })
     ],
     node: false,
     output: {

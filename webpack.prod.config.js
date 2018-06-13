@@ -1,18 +1,34 @@
 const path = require("path");
-const webpack = require("webpack")
+const CleanWebpackPlugin = require('clean-webpack-plugin');
+const WorkboxPlugin = require('workbox-webpack-plugin');
+
+const WORKER_FILE = path.resolve('src/js/service-worker/worker.js');
+
+const pathsToClean = [
+    './dist/js',
+    './dist/worker.js'
+];
+
+// the clean options to use
+const cleanOptions = {
+    exclude:  ['.gitkeep'],
+    verbose:  true,
+    dry:      false,
+    watch:    true
+};
 
 module.exports = {
-    mode: "development",
+    mode: "production",
     entry: [
         "babel-polyfill",
         path.resolve('src/js/main')
     ],
-    watch: true,
+    watch: false,
     module: {
         rules: [
             {
                 test: /\.(js|jsx)$/,
-                exclude: /node_modules/,
+                exclude: /node_modules|worker\.js|service-worker/,
                 use: {
                     loader: 'babel-loader',
                     options: {
@@ -33,11 +49,24 @@ module.exports = {
         ]
     },
     plugins: [
-        new webpack.DefinePlugin(
-            {
-                'global': {}
+        new CleanWebpackPlugin(pathsToClean, cleanOptions),
+        new WorkboxPlugin.InjectManifest({
+            swSrc: WORKER_FILE,
+            swDest: './../worker.js',
+            importWorkboxFrom: 'local',
+            globDirectory: './dist/',
+            globPatterns: [
+                'index.html',
+                'manifest.json',
+                'robots.txt',
+                'img/*.svg',
+                'css/*.css',
+                'fonts/local/*.{woff,woff2}',
+            ],
+            modifyUrlPrefix: {
+                '': '/'
             }
-        ),
+        })
     ],
     node: false,
     output: {
