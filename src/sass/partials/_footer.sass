@@ -1,0 +1,91 @@
+.footer
+    background-color: $bg-footer
+    border-top: 1px solid $border-header
+    margin-bottom: env(safe-area-inset-bottom)
+    height: rem(44) 
+    width: 100%
+    position: fixed
+    bottom: 0
+    right: 0
+    left: 0
+
+.footer__inner
+    // text-align: center
+    overflow: hidden
+    margin: 0 auto
+    height: 100%
+    max-width: $site-width
+    position: relative
+
+.footer__content
+    position: relative
+    overflow: hidden
+    overflow-x: auto
+    
+    &:after,
+    &:before
+        background: red
+        display: block
+        height: 44px
+        width: 24px
+        position: absolute
+        top: 0
+        opacity: 0
+        transition: opacity 250ms ease
+        pointer-events: none
+        z-index: 2
+        content: ""
+
+    &:after
+        +func_gradient_lr($white, 1, $white, 0)
+        right: 0
+
+    &:before
+        +func_gradient_lr($white, 0, $white, 1)
+        left: 0
+
+    &.scrolled
+
+        &:after,
+        &:before
+            opacity: 1
+
+    &.scrollend
+
+        &:after
+            opacity: 0
+
+.footer__list
+    font-size: 0
+    display: inline-block
+    overflow: hidden
+    padding: 0
+    white-space: nowrap
+
+    li 
+        display: inline-block
+
+.footer__list-item
+    color: $link-color
+    font-size: rem(18)
+    line-height: 1.2em
+    display: block
+    padding: rem(11) rem(15)
+    position: relative
+
+    &:after
+        background-color: $gc-red
+        display: block
+        height: rem(3)
+        width: 100%
+        position: absolute
+        bottom: 0
+        left: 0
+        transform: translate3d(0,rem(3),0)
+        transition: all 250ms ease
+        content: ""
+
+.footer__list-item--active
+
+    &:after
+        transform: translate3d(0,0,0)
