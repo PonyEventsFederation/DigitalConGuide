@@ -56,6 +56,7 @@ module.exports = {
         new BrowserSyncPlugin({
             host: process.env.IP || 'localhost',
             port: process.env.PORT || 8888,
+            single: true,
             server: {
                 baseDir: ['./dist']
             }

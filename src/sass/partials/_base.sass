@@ -4,6 +4,7 @@
 
 html
   box-sizing: border-box
+  hyphens: auto
 
 *, *:before, *:after
   box-sizing: inherit
@@ -12,8 +13,11 @@ html,
 body
   height: 100%
   width: 100%
-  position: fixed
   overflow: hidden
+
+body
+  // padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left)
+  padding: env(safe-area-inset-top) 0 env(safe-area-inset-bottom) 0
 
 a
   text-decoration: none
@@ -44,21 +48,29 @@ a[href^=tel]
   background-position: center
 
 .content__inner--primary
-  background-color: $white
+  .page__inner
+    margin: rem(15) rem(15) 0 rem(15)
+    background-color: rgba(255, 255, 255, 0.3)
+
+  .page__content
+    padding: rem(15) rem(15) 0 rem(15)
 
 .content__inner--secondary
-  background-color: $bg
+  .page__content
+    padding: rem(30) rem(30) 0 rem(30)
 
-.content__inner--login
-  padding: 0
+.content__inner--footless
+  padding: rem(44) 0 0 0
 
-.page-wrapper
+.page-wrapper,
+.react-swipeable-view-container
   font-size: 0
   height: 100%
   white-space: nowrap
   transition: all 250ms ease
 
-.page
+.page,
+.react-swipeable-view-container [aria-hidden][data-swipeable]
   font-size: rem(16)
   display: inline-block
   height: 100%
@@ -73,16 +85,10 @@ a[href^=tel]
   transition: all 250ms ease
   -webkit-overflow-scrolling: touch
 
-  &.spacer--search
-    margin-top: rem(126)
-    height: calc(100% - 126px)
-
-  &.spacer--events
-    margin-top: rem(288)
-    height: calc(100% - 288px)
-
-.page__content
-  padding: rem(30) rem(30) 0 rem(30)
+  &>div:not([class])
+    overflow: hidden !important
+    height: 100%
+    width: 100%
 
 .main
   padding: rem(15) rem(15) 0 rem(15)

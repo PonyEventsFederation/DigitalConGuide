@@ -1,0 +1,199 @@
+.page-next,
+.page-back
+  background-position: 50% 50%
+  background-repeat: no-repeat
+  background-size: rem(27) rem(88)
+  text-indent: -999999px
+  display: block
+  height: rem(88)
+  width: rem(88)
+  position: fixed
+  top: 50%
+  transform: translate(0, -50%)
+  cursor: pointer
+
+.page-next
+  background-image: url(#{$img}chevron-big-right.svg)
+  right: rem(20)
+
+.page-back
+  background-image: url(#{$img}chevron-big-left.svg)
+  left: rem(20)
+
+.article *
+  color: $text-color
+  font-family: $typo_light
+
+.article
+  +func_clearfix()
+  margin: 0 auto
+  width: 80%
+  max-width: rem(1600)
+
+  .text--bold
+    font-family: $typo_bold
+
+  .image-wrapper
+    position: relative
+    max-width: 100%
+
+    .copyright
+      background-color: rgba($white, 0.8)
+      color: $text-color
+      font-size: rem(13)
+      padding: rem(2) rem(10)
+      position: absolute
+      right: 0
+      bottom: 0
+
+  p
+    line-height: 1.6
+    margin: 0 0 rem(20) 0
+
+  a
+    color: $link-color
+    font-family: $typo_regular
+    word-break: break-word
+
+  b
+    font-family: $typo_bold
+    font-weight: normal
+
+    a
+      font-family: $typo_bold
+      font-weight: normal
+
+  ul:not([class])
+    line-height: 1.6
+    margin: 0 0 rem(20) em(18)
+    list-style-type: square
+    list-style-position: outside
+
+    ul
+      line-height: 1.6
+      margin: 0 0 0 em(18)
+      list-style-type: square
+      list-style-position: outside
+
+  ol
+    line-height: 1.6
+    margin: 0 0 rem(20) em(25)
+    list-style-type: decimal
+    list-style-position: outside
+
+    ol
+      line-height: 1.6
+      margin: 0 0 0 em(25)
+      list-style-type: decimal
+      list-style-position: outside
+
+  table
+    border-collapse: collapse
+    border-spacing: 0
+    hyphens: none
+    line-height: 1.4
+    text-align: left
+    margin: 0 0 rem(25) 0
+
+    tr:nth-child(odd)
+      background-color: $bg-table-row
+
+    th
+      border: 1px solid $border-table
+      font-family: $typo_bold
+      font-weight: normal
+      padding: rem(5) rem(10)
+
+    td
+      border: 1px solid $border-table
+      padding: rem(5) rem(10)
+      vertical-align: top
+
+  blockquote
+    background-color: $bg-quote
+    font-size: rem(20)
+    line-height: 1.6
+    margin: 0 0 rem(25) 0
+    padding: 1em
+    position: relative
+
+    &:before
+      background-image: url(#{$img}quote.svg)
+      background-position: 50% 50%
+      background-repeat: no-repeat
+      background-size: rem(26) rem(29)
+      display: block
+      margin: 0 0 rem(10)
+      height: rem(29)
+      width: rem(29)
+      z-index: 10
+      content: ""
+
+.image-wrapper--top
+  margin: rem(-30) 0 rem(20) 0
+  height: auto
+  width: 100%
+  z-index: 50
+
+  img
+    height: auto
+    width: 100%
+
+.image-wrapper--inline
+  margin: 0 rem(20) rem(10) 0
+  float: left
+
+  img
+    height: auto
+    max-width: 100%
+
+.article__meta
+  font-family: $typo_italic
+  font-size: rem(13)
+  display: block
+  margin: 0 0 rem(20) 0
+
+
+//Responsive Article
+@media (max-width: 1023px)
+
+  .page-back
+    left: 0
+
+  .page-next
+    right: 0
+
+  .image-wrapper--top
+    margin-top: rem(-20)
+
+@media (max-width: 768px)
+
+  .image-wrapper--top
+    margin-top: rem(-15)
+
+@media (max-width: 767px)
+
+  .page-back,
+  .page-next
+    display: none
+
+  .article
+    width: 100%
+
+  .article
+
+    table
+      display: block
+      max-width: 100%
+      overflow: hidden
+      overflow-x: auto
+
+    tbody
+      display: table
+
+@media (max-width: 400px)
+
+  .image-wrapper--inline
+    margin: 0 0 rem(10) 0
+    width: 100%
+    float: none

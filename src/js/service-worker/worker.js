@@ -1,6 +1,8 @@
 if (workbox) {
     console.log(`Yay! Workbox is loaded 🎉`);
 
+    workbox.core.setLogLevel(workbox.core.LOG_LEVELS.warn);
+
     workbox.precaching.precacheAndRoute(self.__precacheManifest || []);
 
     workbox.routing.registerRoute(

@@ -3,9 +3,10 @@
   overflow: hidden
   overflow-y: auto
   padding: rem(20) rem(20) 0 rem(20)
+  padding-bottom: env(safe-area-inset-bottom)
   height: 100%
-  width: rem(200)
-  position: absolute
+  width: rem(290)
+  position: fixed
   top: 0
   right: 0
   bottom: 0
@@ -26,11 +27,10 @@
     border-bottom: 1px solid $white
 
 .menu__list-item
-  color: $text-color
+  color: $grey-ultralite
   display: block
   padding: rem(15) 0
   margin-bottom: auto
 
 .menu__list-item--active
   color: $gc-red
-

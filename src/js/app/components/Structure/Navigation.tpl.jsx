@@ -1,5 +1,5 @@
 import React from 'react'
-import {Link} from 'react-router-dom'
+import {NavLink} from 'react-router-dom'
 
 module.exports = function () {
 
@@ -7,14 +7,8 @@ module.exports = function () {
     return (
         <menu className={"menu " + (active ? 'menu--active' : '')}>
             <ul className="menu__list">
-                <li><a className="menu__list-item menu__list-item--active" href="#!">Home </a></li>
-                <li><Link className="menu__list-item" to={{
-                    pathname: "/artikel/4908",
-                    state: {
-                        dossier: null,
-                        highlightNav: null
-                    }
-                }}>Impressum </Link></li>
+                <li><NavLink exact={true} activeClassName="menu__list-item--active" className="menu__list-item" to={{pathname: "/"}}>Home </NavLink></li>
+                <li><NavLink activeClassName="menu__list-item--active" className="menu__list-item" to={{pathname: "/imprint"}}>Imprint </NavLink></li>
             </ul>
         </menu>
     );

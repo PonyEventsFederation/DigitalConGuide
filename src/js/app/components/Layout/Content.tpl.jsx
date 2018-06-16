@@ -3,13 +3,8 @@ import React from 'react'
 import StructureNavigation from '../Structure/Navigation'
 
 module.exports = function () {
-    let contentClass = "content__inner";
-    if (this.props.type === "article") {
-        contentClass += " content__inner--primary";
-    }
-    else {
-        contentClass += " content__inner--secondary";
-    }
+    let type = this.props.type || "seconday";
+    let contentClass = "content__inner content__inner--" + type;
 
     if (this.props.footerless) {
         contentClass += " content__inner--footless"
@@ -18,7 +13,13 @@ module.exports = function () {
     return [
         <StructureNavigation key="navigation"/>,
         <div key="innerContent" className={contentClass}>
-            {this.props.children}
+            <div className="page-wrapper">
+                <div className="page">
+                    <div className="page__inner">
+                        {this.props.children}
+                    </div>
+                </div>
+            </div>
         </div>
     ];
 };

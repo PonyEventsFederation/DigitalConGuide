@@ -47,10 +47,6 @@ module.exports = function (grunt) {
             sass: {
                 files: ['./src/**/*.sass'],
                 tasks: ['sass']
-            },
-            js: {
-                files: ['./src/**/*.js', './src/**/*.jsx'],
-                tasks: ['webpack:dev']
             }
         }
     });
@@ -70,7 +66,11 @@ module.exports = function (grunt) {
 
     grunt.registerTask('dev', [
         "sass",
-        "webpack:dev",
-        "watch"
+        "webpack:dev"
     ]);
+
+    grunt.registerTask('devCss', [
+        "sass",
+        "watch"
+    ])
 };

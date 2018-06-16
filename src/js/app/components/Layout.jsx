@@ -11,7 +11,3 @@ class Layout extends Element {
 }
 
 export default Layout;
-
-Layout.propTypes = {
-    hideFooter: PropTypes.bool
-};
