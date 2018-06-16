@@ -8,6 +8,7 @@ module.exports = function () {
         <menu className={"menu " + (active ? 'menu--active' : '')}>
             <ul className="menu__list">
                 <li><NavLink exact={true} activeClassName="menu__list-item--active" className="menu__list-item" to={{pathname: "/"}}>Home </NavLink></li>
+                <li><NavLink activeClassName="menu__list-item--active" className="menu__list-item" to={{pathname: "/guests"}}>Guests of Honor </NavLink></li>
                 <li><NavLink activeClassName="menu__list-item--active" className="menu__list-item" to={{pathname: "/imprint"}}>Imprint </NavLink></li>
             </ul>
         </menu>

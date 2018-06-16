@@ -7,14 +7,21 @@ import * as NavActions from "../../actions/navigation.actions";
 const mapStateToProps = (state) => {
     return {
         navActive: getNavigationActive(state),
-        pathname: getPathname(state)
+        pathname: getPathname(state),
+        navTitle: getNavigationTitle(state),
     }
-}
+};
 
 class LayoutHeader extends Element {
 
     configure() {
         this.template = require("./Header.tpl");
+    }
+
+    static getDerivedStateFromProps(nextProps, prevState) {
+        return {
+            title: nextProps.navTitle
+        };
     }
 
     toggleMenu() {

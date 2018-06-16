@@ -1,5 +1,5 @@
 import Reducer from "../../lib/Reducer"
-import {NAVIGATION_CLOSE, NAVIGATION_OPEN} from "../actions/navigation.actions";
+import {NAVIGATION_CLOSE, NAVIGATION_OPEN, SET_TITLE} from "../actions/navigation.actions";
 
 class ReducerNavigation extends Reducer {
 
@@ -15,6 +15,11 @@ class ReducerNavigation extends Reducer {
                 case NAVIGATION_CLOSE:
                     return Object.assign({}, state, {
                         active: false
+                    });
+                case SET_TITLE:
+                    return Object.assign({}, state, {
+                        title: action.title,
+                        prevTitle: state.title
                     });
                 default:
                     return state;

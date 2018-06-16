@@ -1,7 +1,7 @@
 import React from 'react'
 import LayoutHeader from './Layout/Header'
 import LayoutContent from './Layout/Content'
-//import LayoutFooter from './Layout/Footer'
+import LayoutFooter from './Layout/Footer'
 import LayoutDarkener from './Layout/Darkener'
 
 module.exports = function () {
@@ -13,7 +13,7 @@ module.exports = function () {
     ];
 
     if (!this.props.hideFooter) {
-        //parts.push(<LayoutFooter key="footer"/>);
+        parts.push(<LayoutFooter key="footer"/>);
     }
 
     parts.push(
