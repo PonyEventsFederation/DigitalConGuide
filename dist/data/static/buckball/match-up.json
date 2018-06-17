@@ -1,0 +1,11 @@
+{
+  "title": "Match-Up",
+  "text": [
+    "<p>There are two teams with three players each, six players in total. Those players get positioned within the rectangular field marked by 10 pylons. The players are allowed to move freely within the limits of their half of the field.</p>",
+    "<div class=\"image-wrapper image-wrapper--inline\">",
+    "<img src=\"/img/buckball-field.png\" alt=\"Buckball field\" />",
+    "</div>",
+    "<p>Every player in one team has a respective position. There is one attacker, one defender and one catcher, The attacker and the defender try to throw the ball to their team´s catcher by passing it. The catcher tries to get himself in a good, free position to catch the ball. The opposing team‘s defender tries to prevent this by blocking the ball or to catch it himself.</p>",
+    "<p>There is also a referee, who initiates a jump-ball at the beginning of the game or landing of a basket. Both team‘s attackers try to get ahold of the jump-ball to initiate an attack for their team. Furthermore, the referee calls the validation of a basket or which teams will get the ball after an out-of-bounds.</p>"
+  ]
+}

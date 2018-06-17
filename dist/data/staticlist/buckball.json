@@ -1,0 +1,25 @@
+{
+  "baseTitle": "Buckball",
+  "pages": [
+    {
+      "url": "/buckball/forword",
+      "title": "Forword",
+      "file": "buckball/forword"
+    },
+    {
+      "url": "/buckball/materials",
+      "title": "Materials",
+      "file": "buckball/materials"
+    },
+    {
+      "url": "/buckball/match-up",
+      "title": "Match-Up",
+      "file": "buckball/match-up"
+    },
+    {
+      "url": "/buckball/rules",
+      "title": "Rules",
+      "file": "buckball/rules"
+    }
+  ]
+}

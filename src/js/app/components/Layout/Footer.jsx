@@ -19,6 +19,7 @@ class LayoutFooter extends Element {
     }
 
     componentDidMount() {
+        super.componentDidMount();
         this.focusActive();
     }
 

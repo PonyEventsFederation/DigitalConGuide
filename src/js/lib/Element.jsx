@@ -8,6 +8,7 @@ class Element extends Component {
         super(props);
 
         this.state = {};
+        this._mounted = false;
 
         this.configure();
     }
@@ -30,6 +31,14 @@ class Element extends Component {
 
     getNamespaceData(path) {
         return getValueOfObjectByPath("namespaceData." + path, this.context || {});
+    }
+
+    componentDidMount() {
+        this._mounted = true;
+    }
+
+    componentWillUnmount() {
+        this._mounted = false;
     }
 
     configure() {

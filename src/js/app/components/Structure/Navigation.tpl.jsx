@@ -12,13 +12,13 @@ module.exports = function () {
                 {/*<li><NavLink activeClassName="menu__list-item--active" className="menu__list-item" to={{pathname: "/"}}>Timetable </NavLink></li>*/}
                 {/*<li><NavLink activeClassName="menu__list-item--active" className="menu__list-item" to={{pathname: "/"}}>Panels &amp; Shows</NavLink></li>*/}
                 <li><NavLink activeClassName="menu__list-item--active" className="menu__list-item" to={{pathname: "/guests"}}>Guests of Honor </NavLink></li>
-                <li><NavLink activeClassName="menu__list-item--active" className="menu__list-item" to={{pathname: "/"}}>Community Guests </NavLink></li>
-                <li><NavLink activeClassName="menu__list-item--active" className="menu__list-item" to={{pathname: "/"}}>Buckball </NavLink></li>
-                <li><NavLink activeClassName="menu__list-item--active" className="menu__list-item" to={{pathname: "/"}}>PlushieCon </NavLink></li>
-                <li><NavLink activeClassName="menu__list-item--active" className="menu__list-item" to={{pathname: "/"}}>Charity Auction </NavLink></li>
+                {/*<li><NavLink activeClassName="menu__list-item--active" className="menu__list-item" to={{pathname: "/"}}>Community Guests </NavLink></li>*/}
+                <li><NavLink activeClassName="menu__list-item--active" className="menu__list-item" to={{pathname: "/buckball"}}>Buckball </NavLink></li>
+                {/*<li><NavLink activeClassName="menu__list-item--active" className="menu__list-item" to={{pathname: "/"}}>PlushieCon </NavLink></li>*/}
+                {/*<li><NavLink activeClassName="menu__list-item--active" className="menu__list-item" to={{pathname: "/"}}>Charity Auction </NavLink></li>*/}
                 {/*<li><NavLink activeClassName="menu__list-item--active" className="menu__list-item" to={{pathname: "/"}}>Vendors </NavLink></li>*/}
-                <li><NavLink activeClassName="menu__list-item--active" className="menu__list-item" to={{pathname: "/"}}>Rules &amp; Emergency Behavior </NavLink></li>
-                <li><NavLink activeClassName="menu__list-item--active" className="menu__list-item" to={{pathname: "/"}}>Gall Night </NavLink></li>
+                {/*<li><NavLink activeClassName="menu__list-item--active" className="menu__list-item" to={{pathname: "/"}}>Rules &amp; Emergency Behavior </NavLink></li>*/}
+                {/*<li><NavLink activeClassName="menu__list-item--active" className="menu__list-item" to={{pathname: "/"}}>Gall Night </NavLink></li>*/}
                 <li><NavLink activeClassName="menu__list-item--active" className="menu__list-item" to={{pathname: "/staff"}}>Staff </NavLink></li>
                 {/*<li><NavLink activeClassName="menu__list-item--active" className="menu__list-item" to={{pathname: "/"}}>Volunteers &amp; Acknowledgement </NavLink></li>*/}
                 {/*<li><NavLink activeClassName="menu__list-item--active" className="menu__list-item" to={{pathname: "/"}}>Merchandise </NavLink></li>*/}

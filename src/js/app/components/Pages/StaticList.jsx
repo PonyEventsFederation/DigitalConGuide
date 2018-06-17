@@ -13,10 +13,10 @@ const mapStateToProps = (state) => {
     }
 };
 
-class PagesPersonList extends Element {
+class PagesStaticList extends Element {
 
     configure() {
-        this.template = require("./PersonList.tpl");
+        this.template = require("./StaticList.tpl");
 
         this.footerData = [];
         this.state = {
@@ -51,8 +51,9 @@ class PagesPersonList extends Element {
             return;
         }
 
-        const content = await axios.get("/data/persons/" + file + ".json");
-        this.footerData = content.data;
+        const content = await axios.get("/data/staticlist/" + file + ".json");
+        this.footerData = content.data.pages;
+        this.baseTitle = content.data.baseTitle;
 
         const activeIndex = this.footerData.findIndex((item, i) => {
             return item.url === this.props.location.pathname;
@@ -68,6 +69,7 @@ class PagesPersonList extends Element {
         }
 
         this.dispatch(FooterActions.setData(this.footerData));
+        this.setTitle(index);
 
         this.setState({
             loading: false,
@@ -85,8 +87,20 @@ class PagesPersonList extends Element {
         this.onChangeIndex(--index)
     }
 
+    setTitle(index) {
+        let titleParts = [];
+        if (this.baseTitle) {
+            titleParts.push(this.baseTitle);
+        }
+        if (this.footerData[index] && this.footerData[index].title) {
+            titleParts.push(this.footerData[index].title);
+        }
+
+        this.dispatch(NavActions.setTitle(titleParts.join(' - ')));
+    }
+
     onChangeIndex(index, indexLates, data) {
-        this.dispatch(NavActions.setTitle(this.footerData[index].title));
+        this.setTitle(index);
 
         this.setState({
             index: index,
@@ -104,6 +118,6 @@ class PagesPersonList extends Element {
     }
 }
 
-PagesPersonList = connect(mapStateToProps)(PagesPersonList);
+PagesStaticList = connect(mapStateToProps)(PagesStaticList);
 
-export default PagesPersonList
+export default PagesStaticList

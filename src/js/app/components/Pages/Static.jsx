@@ -16,7 +16,15 @@ class PagesStatic extends Element {
     }
 
     componentDidMount() {
+        super.componentDidMount();
         this.loadData();
+    }
+
+    componentDidUpdate(prevProps) {
+        if (this.props.file !== prevProps.file) {
+            this.dispatch(FooterActions.setLoading());
+            this.loadData();
+        }
     }
 
     async loadData() {
@@ -28,9 +36,19 @@ class PagesStatic extends Element {
         const content = await axios.get("/data/static/" + file + ".json");
         const page = content.data;
 
-        this.dispatch(NavActions.setTitle(page.title));
-        this.setState(page);
+        if (this.props.dispatchTitle) {
+            this.dispatch(NavActions.setTitle(page.title));
+        }
+
+        if (this._mounted) {
+            this.setState(page);
+        }
     }
 }
+
+PagesStatic.defaultProps = {
+    renderLayout: true,
+    dispatchTitle: true
+};
 
 export default PagesStatic
