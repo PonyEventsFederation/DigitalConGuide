@@ -14,6 +14,7 @@ export default (app) => {
             <Route path="/guests" render={routeProps => <PagesPersonList {...routeProps} file="vip" />} />
             <Route path="/buckball" render={routeProps => <PagesStaticList {...routeProps} file="buckball" />} />
             <Route path="/plushiecon" render={routeProps => <PagesStatic {...routeProps} file="plushiecon" />} />
+            <Route path="/charity" render={routeProps => <PagesStatic {...routeProps} file="charity" />} />
             <Route path="/staff" render={routeProps => <PagesPersonList {...routeProps} file="staff" />} />
             <Route path="/" component={PanelsNext} />
         </Switch>
