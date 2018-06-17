@@ -3,8 +3,6 @@ if (workbox) {
 
     workbox.core.setLogLevel(workbox.core.LOG_LEVELS.warn);
 
-    workbox.precaching.precacheAndRoute(self.__precacheManifest || []);
-
     workbox.routing.registerRoute(
         new RegExp('.*\.js'),
         workbox.strategies.networkFirst()
@@ -43,6 +41,7 @@ if (workbox) {
         })
     );
 
+    workbox.precaching.precacheAndRoute(self.__precacheManifest || []);
     workbox.routing.registerNavigationRoute("/index.html");
 } else {
     console.log(`Boo! Workbox didn't load 😬`);

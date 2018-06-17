@@ -1,0 +1,129 @@
+.slider
+    overflow: hidden
+    width: 100%
+
+.slider__inner
+    overflow: hidden
+    width: 100%
+
+.slider__content
+    font-size: 0
+    white-space: nowrap
+    transition: all 250ms ease
+
+.slider__item
+    display: inline-block
+    margin: 0 rem(5) 0 0
+    height: rem(260)
+    width: rem(462)
+    vertical-align: top
+    position: relative
+    
+    &:last-child
+        margin: 0
+
+[class*="slider__item--"]
+
+    &:after
+        display: block
+        padding-top: 0
+        padding-bottom: 136 / 242 * 100%
+        height: 0
+        content: ""
+
+.slider__item--central
+
+    &:after
+        background-color: $tile-central
+
+.slider__item--community
+
+    &:after
+        background-color: $tile-community
+
+.slider__item--general
+
+    &:after
+        background-color: $tile-general
+
+.slider__item--guest
+
+    &:after
+        background-color: $tile-guest
+
+.slider__item--signing
+
+    &:after
+        background-color: $tile-signing
+
+.slider__item--evening
+
+    &:after
+        background-color: $tile-evening
+
+.slider__item--special
+
+    &:after
+        background-color: $tile-special
+
+.slider__text
+    background-color: rgba($white, 0.85)
+    color: $text-color
+    font-family: $typo_light
+    font-size: rem(18)
+    line-height: 1.4em
+    white-space: normal
+    display: block
+    padding: rem(5) rem(10)
+    position: absolute
+    right: rem(10)
+    bottom: rem(10)
+    left: rem(10)
+
+.slider__room
+    background-color: rgba($white, 0.85)
+    color: $text-color
+    font-family: $typo_light
+    font-size: rem(14)
+    line-height: 1.4em
+    white-space: normal
+    display: inline-block
+    padding: em(5) em(10)
+    position: absolute
+    top: rem(10)
+    left: rem(10)
+
+.slider__time
+    background-color: rgba($white, 0.85)
+    color: $text-color
+    font-family: $typo_light
+    font-size: rem(14)
+    line-height: 1.4em
+    white-space: normal
+    display: inline-block
+    padding: em(5) em(10)
+    position: absolute
+    top: rem(40)
+    left: rem(10)
+
+//Responsive Slider
+@media (max-width: 517px) and (orientation: portrait)
+    .slider__item,
+    .slider__item.swiper-slide
+        width: 89vw
+        height: auto
+        
+        .image-wrapper
+            width: 89vw
+
+            img 
+                height: auto
+                width: 100%
+
+@media (max-width: 400px) and (orientation: portrait)
+    .slider__text
+        font-size: rem(16)
+        line-height: 1.2em
+        
+    .slider__tag
+        font-size: rem(12)

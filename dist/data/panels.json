@@ -1,0 +1,474 @@
+[
+  {
+    "type": "central",
+    "title": "Opening Ceremony",
+    "room": "main",
+    "events": [
+      {
+        "date": "28.07.2018",
+        "start": "10:00",
+        "end": "10:45"
+      }
+    ]
+  },
+  {
+    "type": "community",
+    "title": "Sweetie Bot",
+    "room": "main",
+    "events": [
+      {
+        "date": "28.07.2018",
+        "start": "11:15",
+        "end": "12:15"
+      }
+    ]
+  },
+  {
+    "type": "general",
+    "title": "Family Feud",
+    "room": "main",
+    "events": [
+      {
+        "date": "28.07.2018",
+        "start": "12:45",
+        "end": "13:30"
+      },
+      {
+        "date": "28.07.2018",
+        "start": "13:45",
+        "end": "14:30"
+      }
+    ]
+  },
+  {
+    "type": "central",
+    "title": "Cosplay Contest",
+    "room": "main",
+    "events": [
+      {
+        "date": "28.07.2018",
+        "start": "15:00",
+        "end": "16:00"
+      }
+    ]
+  },
+  {
+    "type": "guest",
+    "title": "Voice Actor Panel",
+    "room": "main",
+    "events": [
+      {
+        "date": "28.07.2018",
+        "start": "16:30",
+        "end": "17:15"
+      }
+    ]
+  },
+  {
+    "type": "central",
+    "title": "Award Ceremony",
+    "room": "main",
+    "events": [
+      {
+        "date": "28.07.2018",
+        "start": "18:00",
+        "end": "18:30"
+      }
+    ]
+  },
+  {
+    "type": "general",
+    "title": "PlushieCon",
+    "room": "main",
+    "events": [
+      {
+        "date": "28.07.2018",
+        "start": "21:00",
+        "end": "23:00"
+      }
+    ]
+  },
+  {
+    "type": "signing",
+    "title": "BIZAAM Signing Session",
+    "room": "foyer",
+    "events": [
+      {
+        "date": "28.07.2018",
+        "start": "11:15",
+        "end": "12:45"
+      }
+    ]
+  },
+  {
+    "type": "signing",
+    "title": "Signing Session",
+    "room": "foyer",
+    "events": [
+      {
+        "date": "28.07.2018",
+        "start": "13:45",
+        "end": "15:15"
+      }
+    ]
+  },
+  {
+    "type": "community",
+    "title": "My Little Origami",
+    "room": "room1",
+    "events": [
+      {
+        "date": "28.07.2018",
+        "start": "12:45",
+        "end": "13:45"
+      }
+    ]
+  },
+  {
+    "type": "community",
+    "title": "Limeys Art & Vector Panel",
+    "room": "room1",
+    "events": [
+      {
+        "date": "28.07.2018",
+        "start": "15:45",
+        "end": "16:45"
+      }
+    ]
+  },
+  {
+    "type": "community",
+    "title": "My Big Karaoke (Gamesroom)",
+    "room": "room1",
+    "events": [
+      {
+        "date": "28.07.2018",
+        "start": "17:15",
+        "end": "18:15"
+      }
+    ]
+  },
+  {
+    "type": "community",
+    "title": "Sewing 101",
+    "room": "room2",
+    "events": [
+      {
+        "date": "28.07.2018",
+        "start": "11:30",
+        "end": "12:30"
+      }
+    ]
+  },
+  {
+    "type": "community",
+    "title": "How to Pony Fursuit",
+    "room": "room2",
+    "events": [
+      {
+        "date": "28.07.2018",
+        "start": "13:00",
+        "end": "14:00"
+      }
+    ]
+  },
+  {
+    "type": "community",
+    "title": "TRIXIE WANTS YOU",
+    "room": "room2",
+    "events": [
+      {
+        "date": "28.07.2018",
+        "start": "14:30",
+        "end": "15:15"
+      },
+      {
+        "date": "28.07.2018",
+        "start": "15:30",
+        "end": "16:15"
+      }
+    ]
+  },
+  {
+    "type": "community",
+    "title": "Narration and Voice acting basics",
+    "room": "room2",
+    "events": [
+      {
+        "date": "28.07.2018",
+        "start": "16:45",
+        "end": "17:45"
+      }
+    ]
+  },
+  {
+    "type": "community",
+    "title": "My Big Karaoke",
+    "room": "room2",
+    "events": [
+      {
+        "date": "28.07.2018",
+        "start": "18:15",
+        "end": "19:15"
+      }
+    ]
+  },
+  {
+    "type": "evening",
+    "title": "Re:Make",
+    "room": "party",
+    "events": [
+      {
+        "date": "28.07.2018",
+        "start": "19:45",
+        "end": "20:45"
+      }
+    ]
+  },
+  {
+    "type": "evening",
+    "title": "Beat with Javier, John Kenza and Waranto",
+    "room": "party",
+    "events": [
+      {
+        "date": "28.07.2018",
+        "start": "20:45",
+        "end": "23:45"
+      }
+    ]
+  },
+  {
+    "type": "community",
+    "title": "Learn to make your own Plushie",
+    "room": "workshop",
+    "events": [
+      {
+        "date": "28.07.2018",
+        "start": "12:00",
+        "end": "14:00"
+      },
+      {
+        "date": "29.07.2018",
+        "start": "13:30",
+        "end": "15:30"
+      }
+    ]
+  },
+  {
+    "type": "community",
+    "title": "Origami Workshop",
+    "room": "workshop",
+    "events": [
+      {
+        "date": "28.07.2018",
+        "start": "14:30",
+        "end": "16:00"
+      }
+    ]
+  },
+  {
+    "type": "community",
+    "title": "Blind Brainstorm Writing Workshop",
+    "room": "workshop",
+    "events": [
+      {
+        "date": "28.07.2018",
+        "start": "16:30",
+        "end": "18:30"
+      }
+    ]
+  },
+  {
+    "type": "community",
+    "title": "Free For All & Tutorials for new players",
+    "room": "ccg",
+    "events": [
+      {
+        "date": "28.07.2018",
+        "start": "11:00",
+        "end": "12:00"
+      },
+      {
+        "date": "28.07.2018",
+        "start": "16:00",
+        "end": "17:00"
+      },
+      {
+        "date": "29.07.2018",
+        "start": "11:30",
+        "end": "12:30"
+      }
+    ]
+  },
+  {
+    "type": "general",
+    "title": "CCG Tournament",
+    "room": "ccg",
+    "events": [
+      {
+        "date": "28.07.2018",
+        "start": "12:00",
+        "end": "16:00"
+      },
+      {
+        "date": "29.07.2018",
+        "start": "12:30",
+        "end": "15:30"
+      }
+    ]
+  },
+  {
+    "type": "central",
+    "title": "Buckball",
+    "room": "buckball",
+    "events": [
+      {
+        "date": "28.07.2018",
+        "start": "11:00",
+        "end": "14:00"
+      },
+      {
+        "date": "28.07.2018",
+        "start": "16:00",
+        "end": "18:00"
+      },
+      {
+        "date": "29.07.2018",
+        "start": "12:30",
+        "end": "15:30"
+      }
+    ]
+  },
+  {
+    "type": "special",
+    "title": "Fursuit Walk",
+    "room": "buckball",
+    "events": [
+      {
+        "date": "28.07.2018",
+        "start": "14:30",
+        "end": "15:00"
+      }
+    ]
+  },
+  {
+    "type": "guest",
+    "title": "Comic Artist Panel",
+    "room": "main",
+    "events": [
+      {
+        "date": "29.07.2018",
+        "start": "11:30",
+        "end": "12:30"
+      }
+    ]
+  },
+  {
+    "type": "community",
+    "title": "Jan Animations",
+    "room": "main",
+    "events": [
+      {
+        "date": "29.07.2018",
+        "start": "13:00",
+        "end": "14:00"
+      }
+    ]
+  },
+  {
+    "type": "community",
+    "title": "Community Musicians",
+    "room": "main",
+    "events": [
+      {
+        "date": "29.07.2018",
+        "start": "14:30",
+        "end": "15:30"
+      }
+    ]
+  },
+  {
+    "type": "central",
+    "title": "Charity Auctions",
+    "room": "main",
+    "events": [
+      {
+        "date": "29.07.2018",
+        "start": "16:30",
+        "end": "18:15"
+      }
+    ]
+  },
+  {
+    "type": "central",
+    "title": "Closing Ceremony",
+    "room": "main",
+    "events": [
+      {
+        "date": "29.07.2018",
+        "start": "18:15",
+        "end": "19:00"
+      }
+    ]
+  },
+  {
+    "type": "signing",
+    "title": "Signing Session",
+    "room": "foyer",
+    "events": [
+      {
+        "date": "29.07.2018",
+        "start": "14:00",
+        "end": "15:30"
+      }
+    ]
+  },
+  {
+    "type": "community",
+    "title": "The Big Picture",
+    "room": "room1",
+    "events": [
+      {
+        "date": "29.07.2018",
+        "start": "11:30",
+        "end": "12:30"
+      }
+    ]
+  },
+  {
+    "type": "community",
+    "title": "6 years of MLP conventions in Europe and beyond",
+    "room": "room1",
+    "events": [
+      {
+        "date": "29.07.2018",
+        "start": "14:30",
+        "end": "15:30"
+      }
+    ]
+  },
+  {
+    "type": "community",
+    "title": "The Art of Writing: Part 2 Scenery",
+    "room": "room2",
+    "events": [
+      {
+        "date": "29.07.2018",
+        "start": "11:45",
+        "end": "12:45"
+      }
+    ]
+  },
+  {
+    "type": "community",
+    "title": "Starved for Light Panel",
+    "room": "room2",
+    "events": [
+      {
+        "date": "29.07.2018",
+        "start": "14:45",
+        "end": "15:45"
+      }
+    ]
+  }
+]

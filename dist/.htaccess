@@ -1,3 +1,7 @@
+<filesMatch ".(json|js)$">
+    Header set Cache-Control "no-cache"
+</filesMatch>
+
 RewriteEngine On
 RewriteCond %{HTTPS} !on
 RewriteRule ^(.*)$ https://%{SERVER_NAME}%{REQUEST_URI} [R,L]
