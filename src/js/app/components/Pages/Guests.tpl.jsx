@@ -3,20 +3,7 @@ import SwipeableRoutes from "react-swipeable-routes"
 import {Route} from 'react-router-dom'
 
 import Layout from "../Layout"
-
-import GuestsKellySheridan from '../Guests/KellySheridan'
-import GuestsElleyRayHennesey from '../Guests/ElleyRayHennesey'
-import GuestsAndyPrice from '../Guests/AndyPrice'
-import GuestsClaireCorlette from '../Guests/ClaireCorlette'
-import GuestsIanCorlette from '../Guests/IanCorlette'
-
-const COMPONENTS = {
-    "GuestsKellySheridan": GuestsKellySheridan,
-    "GuestsElleyRayHennesey": GuestsElleyRayHennesey,
-    "GuestsAndyPrice": GuestsAndyPrice,
-    "GuestsClaireCorlette": GuestsClaireCorlette,
-    "GuestsIanCorlette": GuestsIanCorlette
-};
+import DetailPerson from "../Detail/Person"
 
 module.exports = function () {
     let footer = this.props.footerPages || [];
@@ -24,10 +11,11 @@ module.exports = function () {
 
     routes = routes.concat(footer.map((item, i) => {
         let componentFunction = (routerProps) => {
-            const component = COMPONENTS[item.component];
-
+            const finalProps = Object.assign({
+                data: item
+            }, routerProps);
             return (
-                React.createElement(component, routerProps)
+                React.createElement(DetailPerson, finalProps)
             )
         };
 

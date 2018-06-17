@@ -1,5 +1,6 @@
 import React from 'react'
 import Element from '../../../lib/Element'
+import axios from "axios"
 import {connect} from "react-redux"
 
 import * as FooterActions from "../../actions/footer.actions";
@@ -17,50 +18,35 @@ class PagesGuests extends Element {
     configure() {
         this.template = require("./Guests.tpl");
 
-        this.footerData = [
-            {
-                title: "Kelly Sheridan",
-                url: "/guests/kelly-sheridan",
-                component: "GuestsKellySheridan"
-            },
-            {
-                title: "Elley Ray Hennesey",
-                url: "/guests/elley-ray-hennesey",
-                component: "GuestsElleyRayHennesey"
-            },
-            {
-                title: "Andy Price",
-                url: "/guests/andy-price",
-                component: "GuestsAndyPrice"
-            },
-            {
-                title: "Claire M. Corlette",
-                url: "/guests/claire-corlette",
-                component: "GuestsClaireCorlette"
-            },
-            {
-                title: "Ian James Corlette",
-                url: "/guests/ian-james-corlette",
-                component: "GuestsIanCorlette"
-            }
-        ];
-
+        this.footerData = [];
         this.state = {
             swipeLeft: false,
             swipeRight: false,
-            index: 0
+            index: 0,
+            loading: true
         }
     }
 
     componentDidMount() {
-        let index = null;
+        this.dispatch(FooterActions.setLoading());
+        this.loadData();
+    }
+
+    async loadData() {
+        this.setState({
+            loading: true
+        });
+
+        let index = this.state.index;
+
+        const content = await axios.get("/data/vip.json");
+        this.footerData = content.data;
 
         const activeIndex = this.footerData.findIndex((item, i) => {
             return item.url === this.props.location.pathname;
         });
 
         if (activeIndex < 0) {
-            index = 0;
             const firstUrl = this.footerData[0].url;
             this.props.history.replace(firstUrl);
         }
@@ -70,7 +56,10 @@ class PagesGuests extends Element {
 
         this.dispatch(FooterActions.setData(this.footerData));
 
-        this.onChangeIndex(index);
+        this.setState({
+            loading: false,
+            index: index
+        });
     }
 
     onClickNext() {

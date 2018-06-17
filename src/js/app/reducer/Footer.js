@@ -1,5 +1,5 @@
 import Reducer from "../../lib/Reducer"
-import {FOOTER_DATA_END} from "../actions/footer.actions";
+import {FOOTER_DATA_END, FOOTER_LOADING} from "../actions/footer.actions";
 
 class ReducerFooter extends Reducer {
 
@@ -8,6 +8,12 @@ class ReducerFooter extends Reducer {
 
         return (state = initialState, action) => {
             switch (action.type) {
+                case FOOTER_LOADING:
+                    return Object.assign({}, state, {
+                        loading: true,
+                        loaded: false,
+                        pages: []
+                    });
                 case FOOTER_DATA_END:
                     return Object.assign({}, state, {
                         loading: false,

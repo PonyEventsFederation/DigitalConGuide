@@ -45,8 +45,11 @@ module.exports = {
                 'index.html',
                 'manifest.json',
                 'robots.txt',
-                'img/*.svg',
+                'img/**/*.svg',
+                'img/**/*.jpg',
+                'img/**/*.png',
                 'css/*.css',
+                'data/**/*.json',
                 'fonts/local/*.{woff,woff2}',
             ],
             modifyUrlPrefix: {
