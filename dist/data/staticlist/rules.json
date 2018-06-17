@@ -3,6 +3,21 @@
   "showSubtitle": false,
   "pages": [
     {
+      "url": "/rules/preamble",
+      "title": "Preamble",
+      "file": "rules/preamble"
+    },
+    {
+      "url": "/rules/security-emergency",
+      "title": "Security / Emergency Situations",
+      "file": "rules/security-emergency"
+    },
+    {
+      "url": "/rules/weapons",
+      "title": "Weapons",
+      "file": "rules/weapons"
+    },
+    {
       "url": "/rules/youth-protection",
       "title": "Youth Protection",
       "file": "rules/youth-protection"
