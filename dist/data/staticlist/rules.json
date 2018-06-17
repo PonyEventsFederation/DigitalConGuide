@@ -1,0 +1,21 @@
+{
+  "baseTitle": "Rules",
+  "showSubtitle": false,
+  "pages": [
+    {
+      "url": "/rules/youth-protection",
+      "title": "Youth Protection",
+      "file": "rules/youth-protection"
+    },
+    {
+      "url": "/rules/food-drink",
+      "title": "Food and Drink regulations",
+      "file": "rules/food-drink"
+    },
+    {
+      "url": "/rules/recording",
+      "title": "Recording of Film- and photo footage",
+      "file": "rules/recording"
+    }
+  ]
+}

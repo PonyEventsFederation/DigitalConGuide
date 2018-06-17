@@ -55,6 +55,12 @@ class PagesStaticList extends Element {
         this.footerData = content.data.pages;
         this.baseTitle = content.data.baseTitle;
 
+        if (content.data.hasOwnProperty("showSubtitle")) {
+            this.showSubtitle = content.data.showSubtitle;
+        } else {
+            this.showSubtitle = true;
+        }
+
         const activeIndex = this.footerData.findIndex((item, i) => {
             return item.url === this.props.location.pathname;
         });
@@ -92,7 +98,7 @@ class PagesStaticList extends Element {
         if (this.baseTitle) {
             titleParts.push(this.baseTitle);
         }
-        if (this.footerData[index] && this.footerData[index].title) {
+        if (this.footerData[index] && this.footerData[index].title && this.showSubtitle) {
             titleParts.push(this.footerData[index].title);
         }
 
