@@ -4,7 +4,7 @@ import {Switch, Route} from 'react-router-dom'
 import PanelsNext from './components/Panels/Next'
 
 import PagesStatic from './components/Pages/Static'
-import PagesGuests from './components/Pages/Guests'
+import PagesPersonList from './components/Pages/PersonList'
 
 export default (app) => {
     const renderMergedProps = (component, ...rest) => {
@@ -24,8 +24,8 @@ export default (app) => {
 
     return (
         <Switch>
-            <PropsRoute path="/imprint" component={PagesStatic} file="imprint" />
-            <Route path="/guests" component={PagesGuests} />
+            <Route path="/imprint" render={routeProps => <PagesStatic {...routeProps} file="imprint" />} />
+            <Route path="/guests" render={routeProps => <PagesPersonList {...routeProps} file="vip" />} />
             <Route path="/" component={PanelsNext} />
         </Switch>
     )

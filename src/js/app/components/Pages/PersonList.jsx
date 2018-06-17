@@ -13,10 +13,10 @@ const mapStateToProps = (state) => {
     }
 };
 
-class PagesGuests extends Element {
+class PagesPersonList extends Element {
 
     configure() {
-        this.template = require("./Guests.tpl");
+        this.template = require("./PersonList.tpl");
 
         this.footerData = [];
         this.state = {
@@ -39,7 +39,7 @@ class PagesGuests extends Element {
 
         let index = this.state.index;
 
-        const content = await axios.get("/data/vip.json");
+        const content = await axios.get("/data/persons/vip.json");
         this.footerData = content.data;
 
         const activeIndex = this.footerData.findIndex((item, i) => {
@@ -91,6 +91,6 @@ class PagesGuests extends Element {
     }
 }
 
-PagesGuests = connect(mapStateToProps)(PagesGuests);
+PagesPersonList = connect(mapStateToProps)(PagesPersonList);
 
-export default PagesGuests
+export default PagesPersonList
