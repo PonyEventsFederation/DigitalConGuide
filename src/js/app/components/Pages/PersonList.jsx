@@ -32,14 +32,25 @@ class PagesPersonList extends Element {
         this.loadData();
     }
 
+    componentDidUpdate(prevProps) {
+        if (this.props.file !== prevProps.file) {
+            this.dispatch(FooterActions.setLoading());
+            this.loadData();
+        }
+    }
+
     async loadData() {
         this.setState({
             loading: true
         });
 
         let index = this.state.index;
+        const file = this.props.file;
+        if (!file) {
+            return;
+        }
 
-        const content = await axios.get("/data/persons/vip.json");
+        const content = await axios.get("/data/persons/" + file + ".json");
         this.footerData = content.data;
 
         const activeIndex = this.footerData.findIndex((item, i) => {
@@ -49,6 +60,7 @@ class PagesPersonList extends Element {
         if (activeIndex < 0) {
             const firstUrl = this.footerData[0].url;
             this.props.history.replace(firstUrl);
+            index = 0;
         }
         else {
             index = activeIndex;

@@ -37,6 +37,8 @@ if (workbox) {
             ],
         })
     );
+
+    workbox.routing.registerNavigationRoute("/index.html");
 } else {
     console.log(`Boo! Workbox didn't load 😬`);
 }
