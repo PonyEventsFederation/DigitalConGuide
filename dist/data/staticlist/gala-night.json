@@ -1,0 +1,16 @@
+{
+  "baseTitle": "Gala Night",
+  "showSubtitle": false,
+  "pages": [
+    {
+      "url": "/gala-night/gala-evening",
+      "title": "The Gala Evening",
+      "file": "gala-night/gala-evening"
+    },
+    {
+      "url": "/gala-night/dresscode",
+      "title": "Gala Ball Dress Code",
+      "file": "gala-night/dresscode"
+    }
+  ]
+}

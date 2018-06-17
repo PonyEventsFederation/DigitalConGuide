@@ -18,7 +18,7 @@ module.exports = function () {
                 <li><NavLink activeClassName="menu__list-item--active" className="menu__list-item" to={{pathname: "/charity"}}>Charity Auction </NavLink></li>
                 {/*<li><NavLink activeClassName="menu__list-item--active" className="menu__list-item" to={{pathname: "/"}}>Vendors </NavLink></li>*/}
                 <li><NavLink activeClassName="menu__list-item--active" className="menu__list-item" to={{pathname: "/rules"}}>Rules &amp; Emergency Behavior </NavLink></li>
-                {/*<li><NavLink activeClassName="menu__list-item--active" className="menu__list-item" to={{pathname: "/"}}>Gala Night </NavLink></li>*/}
+                <li><NavLink activeClassName="menu__list-item--active" className="menu__list-item" to={{pathname: "/gala-night"}}>Gala Night </NavLink></li>
                 <li><NavLink activeClassName="menu__list-item--active" className="menu__list-item" to={{pathname: "/staff"}}>Staff </NavLink></li>
                 {/*<li><NavLink activeClassName="menu__list-item--active" className="menu__list-item" to={{pathname: "/"}}>Volunteers &amp; Acknowledgement </NavLink></li>*/}
                 {/*<li><NavLink activeClassName="menu__list-item--active" className="menu__list-item" to={{pathname: "/"}}>Merchandise </NavLink></li>*/}
